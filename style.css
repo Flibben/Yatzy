@@ -1,0 +1,54 @@
+table{
+    width: 420px;
+    border-collapse: collapse;
+}
+th{
+    font-size:xx-large;
+    border: dashed 3px;
+    border-bottom-style: none;
+}
+td{
+    border: 1px solid #000000;
+    padding:0px;
+    margin:0px;
+    height:22px;
+    width:70px;
+}
+
+td:first-child{
+    width: 130px;
+    padding-left: 3px;
+}
+.thick{
+    border: 2px solid #000000;
+    font-weight: bold;
+}
+.grey{
+    background-color:#808080;
+}
+.darkgrey{
+    background-color:#a9a9a9;
+}
+.throw:nth-of-type(2n+0){
+    background-color:#f5f5f5;
+}
+input{
+    border:0px;
+    height:100%;
+    width:70px;
+    padding:0;
+    padding-inline-start: 5px;
+}
+
+input.name{
+    background-color:#a9a9a9;
+    text-align: center;
+    font-weight: bold;
+}
+input.number{
+    background-color:inherit;
+}
+input:focus{
+ background-color:#c5afaf;
+ outline: none;
+}
