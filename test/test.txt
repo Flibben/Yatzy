@@ -4,4 +4,4 @@ Albin testar också att lägga till saker!
 Provar adda fler saker!
 Vad händer om vi båda ändrar i samma fil?!
 
-Öz testar att commita via VSCode! :) 
+Öz testar att commita via VSCode!
