@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-﻿Özgür testar att adda saker!
+﻿﻿Özgür testar att adda saker!
 Albin testar också att lägga till saker!
-=======
 Özgür testar att adda saker!
 Provar adda fler saker!
 Vad händer om vi båda ändrar i samma fil?!
->>>>>>> 53fd517743d89b6d0811f643210728a461843d2e
+
