@@ -1,2 +1,3 @@
 Özgür testar att adda saker!
 Provar adda fler saker!
+Vad händer om vi båda ändrar i samma fil?!
