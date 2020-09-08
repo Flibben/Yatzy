@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,
+body {
+    height:100%
+}
+
+html {
+    background: linear-gradient(to right, #abd191 0%, #82db47  100%);
+}
+
+body {
+    display:grid;
+    place-items: center;
+}
+#chat-container {
+    min-width:400px;
+    max-width: 500px;
+    max-height: 400px;
+    height: 95vh;
+    background: #ffffff;
+    border-radius: 10px;
+}
+

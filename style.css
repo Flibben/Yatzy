@@ -1,11 +1,14 @@
 table{
     width: 420px;
     border-collapse: collapse;
+    border: 2px solid;
 }
 th{
     font-size:xx-large;
     border: dashed 3px;
     border-bottom-style: none;
+    background: radial-gradient(#ffffff 50%, #bebebe);
+    background-clip: padding-box;
 }
 td{
     border: 1px solid #000000;
@@ -51,4 +54,5 @@ input.number{
 input:focus{
  background-color:#c5afaf;
  outline: none;
+
 }
