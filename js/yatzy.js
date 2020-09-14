@@ -5,7 +5,7 @@
 
  Make a function that roles dices, 5 // DONE
  
- Add a eventlistener for checkbox check/uncheked
+ Add a eventlistener for checkbox check/uncheked // DONE
  Add counter for dicethrows, set max to 3
 
 */
@@ -39,21 +39,9 @@ function addSum(){ // Loops through numbers and adds them to sum
 
 };
 
-function rollDice() { // Rolls 5 dices & writes values to DOM
-    let diceThrow = [0,0,0,0,0];        
-
-    document.getElementsByName(dices);
-    for (i = 0; i < diceThrow.length; i++ ) {
-        diceThrow[i] = oneDice();
-        dice = i+1;
-        document.getElementById("d"+dice).innerHTML = diceThrow[i];
-
-    }
-    return diceThrow;
-}
-
 function eventCheckbox(){ //Eventlistener for checkboxes
-    for(i = 0; i < 5; i++){ 
+    for(i = 0; i < 5; i++){
+        
         document.getElementById("c"+(i+1)).addEventListener("change", function(e){
             if(e.target.checked){
             console.log("checking in nr:" + e.target.id);
@@ -64,6 +52,20 @@ function eventCheckbox(){ //Eventlistener for checkboxes
         });
     };
 }
+
+function rollDice() { // Rolls 5 dices & writes values to DOM
+    let diceThrow = [0,0,0,0,0];        
+
+    document.getElementsByName(dices);
+    for (i = 0; i < diceThrow.length; i++) {
+        diceThrow[i] = oneDice();
+        dice = i+1;
+        document.getElementById("d"+dice).innerHTML = diceThrow[i];
+
+    }
+    return diceThrow;
+}
+
 //////////////////////*END functions*////////////////////
 
 document.addEventListener("DOMContentLoaded", function(yatzy){
