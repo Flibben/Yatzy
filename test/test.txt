@@ -1,7 +1,0 @@
-﻿﻿Özgür testar att adda saker!
-Albin testar också att lägga till saker!
-Özgür testar att adda saker!
-Provar adda fler saker!
-Vad händer om vi båda ändrar i samma fil?!
-
-Öz testar att commita via VSCode!
