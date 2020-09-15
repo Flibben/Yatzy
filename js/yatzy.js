@@ -16,7 +16,7 @@ function oneDice(){ // rolls one dice with 6 sides
     return Math.floor(Math.random() * 6 + 1);
     };
 
-function addSum(){ // Loops through numbers and adds them to sum
+function addSum(){ // Loop add numbers to sum and write to DOM
     let playerOneNumbers = document.getElementsByClassName("playerOneNumbers"); //creat array like objekt of player one numbers.
     for(i = 0; i < playerOneNumbers.length; i++){ // loop thru playerOneNumbers and add .value to sum1.innerHTML
     
@@ -39,44 +39,59 @@ function addSum(){ // Loops through numbers and adds them to sum
 
 };
 
-function eventCheckbox(){ //Eventlistener for checkboxes
-    for(i = 0; i < 5; i++){
-        
-        document.getElementById("c"+(i+1)).addEventListener("change", function(e){
+function eventCheckbox(){ //Eventlistener for checkboxes. Returns array checkedOrnot. 1 if checked, 0 if not.
+    let checkedOrNot = [0,0,0,0,0]
+    for(let i = 0; i < 5; i++){ 
+        document.getElementById("c"+(i+1)).addEventListener("change", function(e){ //loggs checked state to checkedOrNot
             if(e.target.checked){
-            console.log("checking in nr:" + e.target.id);
+                checkedOrNot[i] = 1;    
             }
             else if(!e.target.checked){
-            console.log("Checking out nr:" + e.target.id);
+                checkedOrNot[i] = 0;
             };
         });
     };
-}
+    return checkedOrNot;
+};
 
-function rollDice() { // Rolls 5 dices & writes values to DOM
-    let diceThrow = [0,0,0,0,0];        
+function rollDice(rollThisDice) { // Rolls dices & writes values to DOM
+    let throwsLeft = 3;
+    console.log(throwsLeft);
+    document.getElementById("throwDice").addEventListener("click", function(e){ //adds event to button that throws the dice!
+        let diceThrow = [0,0,0,0,0];
 
-    document.getElementsByName(dices);
-    for (i = 0; i < diceThrow.length; i++) {
-        diceThrow[i] = oneDice();
-        dice = i+1;
-        document.getElementById("d"+dice).innerHTML = diceThrow[i];
+        if(!rollThisDice.includes(0) || throwsLeft == 0){ //do nothing if either statement is true 
+            console.log("No dices where rolled or you where out of throws");
+        }
+        else{ //if you have throwsLeft and have unchecked box(es) - do this.
+            console.log(rollThisDice)   
 
-    }
-    return diceThrow;
-}
+            for (let i = 0; i < diceThrow.length; i++) {
+                dice = i+1;
+
+                if(rollThisDice[i] === 0 ){
+                    diceThrow[i] = oneDice();
+                    document.getElementById("d"+dice).innerHTML = diceThrow[i];
+                }
+                else if (rollThisDice[i] === 1){
+                    console.log("Dice number " + (i+1) + " was not rolled");
+                }
+            }
+        throwsLeft--; //one throw was used
+        document.getElementById("dicesleft").innerHTML = throwsLeft;
+        console.log(throwsLeft);
+        }
+    })
+};  
+
 
 //////////////////////*END functions*////////////////////
 
 document.addEventListener("DOMContentLoaded", function(yatzy){
 
-   addSum(); //adds numbers to sum
+   addSum(); //Eventlistener that adds numbers to sum
 
-   eventCheckbox(); // look if checked or not. Works but only logs if pressed or not.
-
-    document.getElementById("throwDice").addEventListener("click", function(e){ //adds event to button that throws the dice!
-        rollDice() // rolls dices!
-    }); 
-
+   rollDice(eventCheckbox()/* returns array checkedOrNot.*/ ); // rolls dices when button "kasta tärning" is pressed!
+    
 });
 
